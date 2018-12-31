@@ -19,6 +19,8 @@ class MyApp extends StatefulWidget {
 /// cant import the class to another file
 /// State<MyApp>
 class _MyAppState extends State<MyApp> {
+// _products because this property is only used in this class
+  List<String> _products = ['Film Critic'];
 // Strickly typing
 // Overrides because there is a build method within StatelessWidget
   @override
@@ -37,14 +39,19 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Add new Image'),
                 ),
               ),
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    Image.asset('assets/film_cart.jpeg'),
-                    Text('I miss film :('),
-                  ],
-                ),
-              ),
+              Column(
+                  children: _products
+                      .map(
+                        (element) => Card(
+                              child: Column(
+                                children: <Widget>[
+                                  Image.asset('assets/film_cart.jpeg'),
+                                  Text((element)),
+                                ],
+                              ),
+                            ),
+                      )
+                      .toList()),
             ],
           )),
     );
