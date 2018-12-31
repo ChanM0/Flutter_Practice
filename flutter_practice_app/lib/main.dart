@@ -20,6 +20,7 @@ class MyApp extends StatefulWidget {
 /// State<MyApp>
 class _MyAppState extends State<MyApp> {
 // _products because this property is only used in this class
+// This list is not scrollable!
   List<String> _products = ['Film Critic'];
 // Strickly typing
 // Overrides because there is a build method within StatelessWidget
@@ -35,7 +36,11 @@ class _MyAppState extends State<MyApp> {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: RaisedButton(
-                  onPressed: () {}, // anymous function
+                  onPressed: () {
+                    setState(() {
+                      _products.add("New Film Critic");
+                    });
+                  }, // anymous function
                   child: Text('Add new Image'),
                 ),
               ),
