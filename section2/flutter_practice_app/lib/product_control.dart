@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProductControl extends StatelessWidget {
+  // add final because stateless widgets are immutable
   final Function addProduct;
 
   ProductControl({this.addProduct});
