@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import './products.dart';
 
+import './product_control.dart';
+
 class ProductManager extends StatefulWidget {
   final String startingProduct;
 
@@ -32,8 +34,13 @@ class _ProjectManagerState extends State<ProductManager> {
   @override
   void didUpdateWidget(ProductManager oldWidget) {
     print("[ProductManagerState] didUpdate()");
-    // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
+  }
+
+  void _addProduct({String newProduct = 'default new product'}) {
+    setState(() {
+      _products.add(newProduct);
+    });
   }
 
   @override
@@ -42,15 +49,7 @@ class _ProjectManagerState extends State<ProductManager> {
     return Column(children: [
       Container(
         margin: EdgeInsets.all(10.0),
-        child: RaisedButton(
-          color: Theme.of(context).primaryColor,
-          onPressed: () {
-            setState(() {
-              _products.add("New Film Critic");
-            });
-          }, // anymous function
-          child: Text('Add new Image'),
-        ),
+        child: ProductControl(addProduct: _addProduct),
       ),
       Products(_products)
     ]);
