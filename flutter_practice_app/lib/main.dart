@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('EasyList'),
-        ), //AppBar
-        body: ProductManager('I miss Films :('),
+        ),
+        body: ProductManager(startingProduct: 'I miss Films :('),
       ),
     );
   }
