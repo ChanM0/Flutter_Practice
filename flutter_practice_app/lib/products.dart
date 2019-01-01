@@ -8,6 +8,8 @@ class Products extends StatelessWidget {
   }
 
   // returns a widget
+  //List Builder allows us to dynamically add and remove items for the view
+  // better for performance
   Widget _productBuilder(BuildContext context, int index) {
     return Card(
       child: Column(
