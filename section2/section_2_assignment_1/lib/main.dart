@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './Manager.dart';
+import './text_control.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,11 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.deepOrange),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Assignment 1"),
-        ),
-        body: Manager(),
-      ),
+          appBar: AppBar(
+            title: Text("Assignment 1"),
+          ),
+          body: TextControl()),
     );
   }
 }
