@@ -5,7 +5,7 @@ import './products.dart';
 import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
-  final String startingProduct;
+  final Map<String, String> startingProduct;
 
   ProductManager({this.startingProduct}) {
     print("[ProductManager Wiget] Constructor");
@@ -19,7 +19,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProjectManagerState extends State<ProductManager> {
-  List<String> _products = [];
+  List<Map<String, String>> _products = [];
 
   //initState will run whenever this state obj is created
   @override
@@ -39,7 +39,7 @@ class _ProjectManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
-  void _addProduct({String newProduct = 'default new product'}) {
+  void _addProduct({Map<String, String> newProduct}) {
     setState(() {
       _products.add(newProduct);
     });

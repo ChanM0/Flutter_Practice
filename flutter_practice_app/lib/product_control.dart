@@ -13,7 +13,10 @@ class ProductControl extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       onPressed: () {
         print("[ProductControl] onPressed()");
-        addProduct(newProduct: "new film critc!");
+        addProduct(newProduct: {
+          'title': 'Choclate',
+          'image': 'assets/film_cart.jpeg'
+        });
       }, // anymous function
       child: Text('Add new Image'),
     );
