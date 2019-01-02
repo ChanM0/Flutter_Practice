@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './pages/product.dart';
+
 class Products extends StatelessWidget {
   final List<String> products;
 
@@ -21,7 +23,11 @@ class Products extends StatelessWidget {
             children: <Widget>[
               FlatButton(
                 child: Text('Detials'),
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => ProductPage()),
+                    ),
               )
             ],
           )
