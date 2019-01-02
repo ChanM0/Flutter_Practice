@@ -7,7 +7,7 @@ import './product_control.dart';
 class ProductManager extends StatefulWidget {
   final String startingProduct;
 
-  ProductManager({this.startingProduct = "Default name!"}) {
+  ProductManager({this.startingProduct}) {
     print("[ProductManager Wiget] Constructor");
   }
 
@@ -25,9 +25,11 @@ class _ProjectManagerState extends State<ProductManager> {
   @override
   void initState() {
     super.initState();
+    if (widget.startingProduct != null) {
+      _products.add(widget.startingProduct);
+    }
     print("[ProductManagerState] initState()");
     //widget. allows you to access the parent widget properties
-    _products.add(widget.startingProduct);
   }
 
 // This will execute whenever your connected widget recieves new external data.

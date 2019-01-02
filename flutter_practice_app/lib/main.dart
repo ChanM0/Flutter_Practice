@@ -13,11 +13,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepOrange,
           accentColor: Colors.deepPurple),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('EasyList'),
-        ),
-        body: ProductManager(startingProduct: 'I miss Films :('),
-      ),
+          appBar: AppBar(
+            title: Text('EasyList'),
+          ),
+          body: ProductManager()),
     );
   }
 }

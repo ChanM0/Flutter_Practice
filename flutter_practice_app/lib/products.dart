@@ -8,7 +8,7 @@ class Products extends StatelessWidget {
   }
 
   // returns a widget
-  //List Builder allows us to dynamically add and remove items for the view
+  // List Builder allows us to dynamically add and remove items for the view
   // better for performance
   Widget _productBuilder(BuildContext context, int index) {
     return Card(
@@ -24,9 +24,13 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("[Product Wiget] build()");
-    return ListView.builder(
-      itemBuilder: _productBuilder,
-      itemCount: products.length,
-    );
+    return products.length > 0
+        ? ListView.builder(
+            itemBuilder: _productBuilder,
+            itemCount: products.length,
+          )
+        : Center(
+            child: Text("No products found, Please add some!"),
+          );
   }
 }
